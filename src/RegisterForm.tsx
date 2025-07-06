@@ -42,7 +42,7 @@ export default function RegisterForm() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/auth/register",
+        "http://192.168.1.2:3000/auth/register",
         formData
       );
       setMessage("Kayıt başarılı!");
@@ -55,7 +55,7 @@ export default function RegisterForm() {
 
   const fetchParents = async () => {
     try {
-      const res = await axios.get<Parent[]>("http://localhost:3000/auth/all");
+      const res = await axios.get<Parent[]>("http://192.168.1.2:3000/auth/all");
       setParents(res.data);
     } catch (error) {
       console.error("Veriler alınamadı:", error);
